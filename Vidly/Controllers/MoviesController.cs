@@ -43,6 +43,23 @@ namespace Vidly.Controllers
             //return RedirectToAction("Index", "Home", new {page = 1, sortBy = "name"});
         }
 
+        [Route("movies")]
+        public ViewResult Index()
+        {
+            var movies = GetMovies();
+               
+            return View(movies);
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie {Id = 1, Name = "12 Monkeys"},
+                new Movie {Id = 2, Name = "The Game"},
+                new Movie {Id = 3, Name = "Meet Joe Black"}
+            };
+        }
 
         [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
 
