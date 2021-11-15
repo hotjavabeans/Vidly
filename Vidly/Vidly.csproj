@@ -202,13 +202,13 @@
     <Compile Include="Migrations\202111131247465_MakeMembershipTypeNameRequired.Designer.cs">
       <DependentUpon>202111131247465_MakeMembershipTypeNameRequired.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111131434250_AddMovie.cs" />
-    <Compile Include="Migrations\202111131434250_AddMovie.Designer.cs">
-      <DependentUpon>202111131434250_AddMovie.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202111131438216_Genres.cs" />
     <Compile Include="Migrations\202111131438216_Genres.Designer.cs">
       <DependentUpon>202111131438216_Genres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111141530089_AddMovie.cs" />
+    <Compile Include="Migrations\202111141530089_AddMovie.Designer.cs">
+      <DependentUpon>202111141530089_AddMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -217,10 +217,12 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\MoviesViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
@@ -289,6 +291,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,11 +337,11 @@
     <EmbeddedResource Include="Migrations\202111131247465_MakeMembershipTypeNameRequired.resx">
       <DependentUpon>202111131247465_MakeMembershipTypeNameRequired.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111131434250_AddMovie.resx">
-      <DependentUpon>202111131434250_AddMovie.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111131438216_Genres.resx">
       <DependentUpon>202111131438216_Genres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111141530089_AddMovie.resx">
+      <DependentUpon>202111141530089_AddMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
