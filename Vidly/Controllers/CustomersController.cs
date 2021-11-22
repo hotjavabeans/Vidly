@@ -30,9 +30,9 @@ namespace Vidly.Controllers
             //var customers = GetCustomers();
             //var customers = _context.Customers; //deferred execution
             //var customers = _context.Customers.ToList(); //immediate execution
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //eager loading
-
-            return View(customers);
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //eager loading
+            // No longer need to send list of customers from server, ajax now used.
+            return View();
         }
 
         [Route("customers/details/{id}")]
