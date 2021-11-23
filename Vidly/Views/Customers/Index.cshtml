@@ -9,22 +9,20 @@
 
 <table id="customers" class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>Customer</th>
-        <th>Membership Type</th>
-        <th>Delete</th>
-    </tr>
+        <tr>
+            <th>Customer</th>
+            <th>Membership Type</th>
+            <th>Delete</th>
+        </tr>
     </thead>
-    <tbody>
-                
-    </tbody>
+    <tbody></tbody>
 </table>
 
 @section scripts
 {
     <script>
         $(function () {
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -48,9 +46,7 @@
                 ]
             });
 
-            $("#customers").on("click",
-                ".js-delete",
-                function () {
+            $("#customers").on("click", ".js-delete", function () {
                     var button = $(this);
 
                     bootbox.confirm({
@@ -63,7 +59,7 @@
                                     url: "/api/customers/" + button.attr("data-customer-id"),
                                     method: "DELETE",
                                     success: function () {
-                                        button.parents("tr").remove();
+                                        table.row(button.parents("tr")).remove().draw();
                                     }
                                 });
                             }
