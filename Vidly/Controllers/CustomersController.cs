@@ -33,7 +33,10 @@ namespace Vidly.Controllers
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //eager loading
             //return View(customers);
             // No longer need to send list of customers from server, ajax now used.
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
 
         [Route("customers/details/{id}")]
@@ -48,7 +51,7 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -62,6 +65,7 @@ namespace Vidly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Customer customer) //UpdateCustomerDto customer. AutoMapper
         {
             if (!ModelState.IsValid)
@@ -97,6 +101,8 @@ namespace Vidly.Controllers
         //        new Customer { Id = 3, Name = "Nyx" }
         //    };
         //}
+
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

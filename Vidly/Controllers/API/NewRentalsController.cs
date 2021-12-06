@@ -19,6 +19,7 @@ namespace Vidly.Controllers.API
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
             var customer = _context.Customers.Single(
