@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Vidly.Models;
 
 namespace Vidly.Controllers
 {
     [AllowAnonymous]
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))   
+                return View("Index");
+
+            return View("ReadOnlyIndex");
         }
 
         public ActionResult About()

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<h1>Vidly Dashboard</h1>
+<h4>Welcome, @User.Identity.Name!</h4>
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>View Customers</h2>
+        <p>
+            View the customers that we currently have in our database.
+        </p>
+        @Html.ActionLink("View Customers \u00BB", "Index", "Customers", null, new { @class = "btn btn-primary" })
+    </div>
+    <div class="col-md-4">
+        <h2>View Movies</h2>
+        <p>
+            View the movies that we currently have in our datababse.
+        </p>
+        @Html.ActionLink("View Movies \u00BB", "Index", "Movies", null, new { @class = "btn btn-primary" })
+    </div>
+</div>

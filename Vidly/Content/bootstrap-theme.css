@@ -73,8 +73,8 @@ a, .btn-link {
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
     color: #ffffff;
-    background-color: #52656B;
-    border-color: #52656B;
+    background-color: #561C75;
+    border-color: #561C75;
 }
 
 .pagination > li > a, .pager > li > a, .pagination > li > span, .pager > li > span {
@@ -102,3 +102,4 @@ table a:not(.btn), .table a:not(.btn) {
         box-shadow: none;
         border: 2px solid #561C75;
     }
+
