@@ -94,16 +94,12 @@
                 },
                 "Please select a valid customer.");
 
-            $.validator.addMethod("atLeastOneMovie",
-                function() {
+            $.validator.addMethod("atLeastOneMovie", function() {
                     return vm.movieIds.length > 0;
-                },
-                "Please select a valid movie.");
+                }, "Please select at least one movie.");
 
             var validator = $("#newRental").validate({
                 submitHandler: function() {
-                    e.preventDefault();
-
                     $.ajax({
                         url: "/api/newRentals",
                         method: "post",

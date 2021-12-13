@@ -1,4 +1,8 @@
-﻿.typeahead {
+﻿.twitter-typeahead {
+    width: 300px;
+}
+
+.typeahead {
     background-color: #fff;
 }
 
@@ -16,13 +20,16 @@
     color: #999
 }
 
+.tt-input {
+    border: 1.5px solid #561C75;
+}
+
 .tt-menu {
     width: 422px;
     margin: 12px 0;
     padding: 8px 0;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid #561C75;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
@@ -31,22 +38,27 @@
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
+    .tt-menu:hover {
+        background-color: #009C22;
+        color: #fff;
+    }
+
 .tt-suggestion {
     padding: 3px 20px;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 24px;
 }
 
-.tt-suggestion:hover {
-    cursor: pointer;
-    color: #fff;
-    background-color: #0097cf;
-}
+    .tt-suggestion:hover {
+        cursor: pointer;
+        color: #fff;
+        background-color: #009C22;
+    }
 
-.tt-suggestion.tt-cursor {
-    color: #fff;
-    background-color: #0097cf;
-}
+    .tt-suggestion.tt-cursor {
+        color: #fff;
+        background-color: #009C22;
+    }
 
 .tt-suggestion p {
     margin: 0;

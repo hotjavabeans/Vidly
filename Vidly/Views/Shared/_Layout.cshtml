@@ -14,11 +14,12 @@
     @RenderBody()
     <hr/>
     <footer>
-        <p>&copy; @DateTime.Now.Year - Mosh's Vidly tutorial completed by James Ware</p>
+        <p>&copy; @DateTime.Now.Year - Mosh's Vidly ASP.NET MVC 5 Course completed by James Ware</p>
     </footer>
 </div>
 
 @Scripts.Render("~/bundles/lib")
+    @* Could wrap @RenderSection in <script> tags to force script only *@
 @RenderSection("scripts", required: false)
 </body>
 </html>

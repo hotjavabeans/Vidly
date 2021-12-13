@@ -2706,6 +2706,14 @@ select.input-sm {
   height: 28px;
   line-height: 28px;
 }
+
+    select.input-sm.option:hover {
+        height: 28px;
+        line-height: 28px;
+        background-color: #561C75;
+    }
+
+
 textarea.input-sm,
 select[multiple].input-sm {
   height: auto;
