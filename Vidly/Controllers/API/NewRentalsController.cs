@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -6,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
+using AutoMapper;
 
 namespace Vidly.Controllers.API
 {
@@ -17,6 +19,19 @@ namespace Vidly.Controllers.API
         {
             _context = new ApplicationDbContext();
         }
+         
+        // GET /api/newrentals
+        public IHttpActionResult GetRentals()
+        {
+            var rentalDtos = _context.Rentals
+                .Include(r => r.Customer)
+                .Include(r => r.Movie)
+                .ToList()
+                .Select(Mapper.Map<Rental, NewRentalDto>);
+
+            return Ok(rentalDtos);
+        }
+
 
         [HttpPost]
         [Authorize(Roles = RoleName.CanManageMovies)]
@@ -43,7 +58,6 @@ namespace Vidly.Controllers.API
                     Movie = movie,
                     DateRented = DateTime.Now
                 };
-
                 _context.Rentals.Add(rental);
             }
 

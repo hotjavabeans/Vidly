@@ -19,5 +19,7 @@ namespace Vidly.Models
         public DateTime DateRented { get; set; }
 
         public DateTime? DateReturned { get; set; }
+
+        // prop DateScheduledReturn? make this extendable by admin, viewable by user.
     }
 }

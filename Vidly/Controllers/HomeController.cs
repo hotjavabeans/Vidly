@@ -7,7 +7,7 @@ using Vidly.Models;
 
 namespace Vidly.Controllers
 {
-    [AllowAnonymous]
+    
     public class HomeController : Controller
     {
         public ViewResult Index()
@@ -18,13 +18,14 @@ namespace Vidly.Controllers
             return View("ReadOnlyIndex");
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

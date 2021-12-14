@@ -1,0 +1,29 @@
+﻿@model Vidly.ViewModels.RentalFormViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+@using (Html.BeginForm("Save", "Rentals"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(r => r.Id)
+        @Html.TextBoxFor(r => r.Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(r => r.Id)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.DateRented)
+        @Html.TextBoxFor(r => r.DateRented, new { @class = "form-control" })
+        @Html.ValidationMessageFor(r => r.DateRented)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.ExpectedReturnDate)
+        @Html.TextBoxFor(r => r.ExpectedReturnDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(r => r.ExpectedReturnDate)
+    </div>
+
+    @Html.HiddenFor(r => r.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}

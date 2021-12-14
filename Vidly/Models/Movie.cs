@@ -31,5 +31,3 @@ namespace Vidly.Models
         public byte NumberAvailable { get; set; }
     }
 }
-
-// /movies/random
